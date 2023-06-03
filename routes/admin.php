@@ -15,24 +15,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //get
-Route::get('/', function () {
-    return view('admin.login');
+Route::prefix("admin")->group(function () {
+    Route::get('/', function () {
+        return view('admin.login');
+    });
+
+    Route::get('/login', function () {
+        return view('admin.login');
+    })->name('login');
+
+    // login mendatory
+    Route::group(['middleware' => 'adminauth'], function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard']);
+    });
+    Route::get('/category', [AdminController::class, 'category']);
+    Route::get('/product', [AdminController::class, 'product']);
+    Route::get('/user', [AdminController::class, 'user']);
+    Route::get('/password', [AdminController::class, 'password']);
+
+    //post
+    Route::post('/login', [AdminController::class, 'login']);
+    Route::post('/category', [AdminController::class, 'AddCategory']);
+    Route::post('/product', [AdminController::class, 'product']);
+    Route::post('/user', [AdminController::class, 'user']);
+    Route::post('/password', [AdminController::class, 'password']);
 });
-
-Route::get('/login', function () {
-    return view('admin.login');
-})->name('login');
-
-// login mendatory
-Route::get('/dashboard', [AdminController::class, 'dashboard']);
-Route::get('/category', [AdminController::class, 'category']);
-Route::get('/product', [AdminController::class, 'product']);
-Route::get('/user', [AdminController::class, 'user']);
-Route::get('/password', [AdminController::class, 'password']);
-
-//post
-Route::post('/login', [AdminController::class, 'login']);
-Route::post('/category', [AdminController::class, 'AddCategory']);
-Route::post('/product', [AdminController::class, 'product']);
-Route::post('/user', [AdminController::class, 'user']);
-Route::post('/password', [AdminController::class, 'password']);

@@ -1,4 +1,5 @@
 <div class="sidebar">
+    <a href="#">{{ Auth::guard('admin')->user()->name }}</a>
     <a href="{{ url('/admin/dashboard') }}">Home</a>
     <a href="{{ url('/admin/user') }}">Users</a>
     <a href="{{ url('/admin/category') }}">Category</a>
