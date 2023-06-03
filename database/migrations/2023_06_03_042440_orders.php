@@ -19,9 +19,11 @@ return new class extends Migration
             $table->string('address');
             $table->string('coupon');
             $table->integer('mrp');
+            $table->integer('tax');
             $table->integer('discount');
             $table->integer('final_amount');
-            $table->integer('status')->comment('1:order,2:packed,3:shipped,4:in transit,5:deliverred');
+            $table->integer('shipment_status')->comment('1:pending,2:packed,3:shipped,4:in transit,5:deliverred');
+            $table->integer('status')->comment('1:order,2:cancelled,3:refunded');
             $table->timestamps();
         });
     }

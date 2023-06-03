@@ -18,8 +18,10 @@ return new class extends Migration
             $table->integer('review_id');
             $table->string('title');
             $table->text('description');
-            $table->float('price');
+            $table->float('mrp');
+            $table->float('selling_price');
             $table->integer('stock');
+            $table->text('seo');
             $table->integer('status')->comment('1:active,0:inactive');
             $table->timestamps();
         });

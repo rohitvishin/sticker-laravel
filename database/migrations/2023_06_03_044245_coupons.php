@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->string('description');
             $table->float('discount');
+            $table->integer('use_limit')->comment('0:unlimited');
             $table->timestamp('valid_from')->nullable();
             $table->timestamp('valid_until')->nullable();
             $table->integer('status')->comment('1:active,0:inactive');

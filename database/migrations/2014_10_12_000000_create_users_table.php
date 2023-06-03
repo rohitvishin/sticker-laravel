@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('mobile');
-            $table->integer('status')->comment('1:active,0:inactive');
+            $table->integer('newsletter')->comment('1:active,0:inactive')->default(1);
+            $table->integer('status')->comment('1:active,0:inactive')->default(1);;
             $table->rememberToken();
             $table->timestamps();
         });
