@@ -52,6 +52,9 @@
     </div>
     @include('admin.include.footer')
 </body>
+
+<script src={{ asset('axios.min.js') }}></script>
+
 <script>
     function editPro(Id) {
         // edit product
@@ -61,6 +64,19 @@
     function delPro(Id) {
         // delete product
         console.log(Id);
+        axios.post(`${url}/admin/deletePro`, {
+            pro_id: Id
+        }).then(function(response) {
+            // handle success
+            show_Toaster(response.data.message, response.data.type)
+            if (response.data.type === 'success') {
+                setTimeout(() => {
+                    window.location.href = `${url}/admin/manage-product`;
+                }, 500);
+            }
+        }).catch(function(err) {
+            show_Toaster(err.response.data.message, 'error')
+        })
     }
 </script>
 
