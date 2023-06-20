@@ -120,7 +120,7 @@
                                     <div class="form-group">
                                         <label>Image:</label>
                                         <input type="file" class="form-control"
-                                            name="image" multiple required>
+                                            name="image[]" multiple required>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

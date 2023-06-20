@@ -43,10 +43,15 @@ class AdminController extends Controller
         $data = Category::where('status', 1)->get();
         return view('admin.product', ['category' => $data]);
     }
-
+    public function product_img($id)
+    {
+        $data = ProductImage::where('product_id', $id)->get();
+        return view('admin.product-images', ['images' => $data]);
+    }
     public function ManageProduct()
     {
-        return view('admin.manage-product');
+        $data = Product::select('products.*', 'categories.name as name')->join('categories', 'categories.id', 'products.category_id')->where(['products.status' => 1])->get();
+        return view('admin.manage-product', ['products' => $data]);
     }
     public function user()
     {
@@ -95,9 +100,10 @@ class AdminController extends Controller
         if ($save->save()) {
             $files = $request->file('image');
             foreach ($files as $image) {
-                dd($image);
                 $path = $image->store('icon', 'public');
                 $data['img'] = $path;
+                $data['product_id'] = $save->id;
+                $data['status'] = 1;
                 $Pimg = new ProductImage($data);
                 $Pimg->save();
             }

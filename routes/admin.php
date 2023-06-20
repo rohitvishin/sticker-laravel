@@ -36,6 +36,7 @@ Route::prefix("admin")->group(function () {
         Route::get('/manage-product', [AdminController::class, 'ManageProduct']);
         Route::get('/user', [AdminController::class, 'user']);
         Route::get('/password', [AdminController::class, 'password']);
+        Route::get('/product/{id}', [AdminController::class, 'product_img']);
 
         //post
 

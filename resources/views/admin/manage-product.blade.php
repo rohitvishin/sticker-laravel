@@ -3,7 +3,9 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 @include('admin.include.header')
 
@@ -19,29 +21,30 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        @foreach ($products as $key => $product)
+                            <tr>
+                                <th scope="row">{{ $key }}</th>
+                                <th scope="row">{{ $product->name }}</th>
+                                <td>{{ $product->title }}</td>
+                                <td>{{ $product->description }}</td>
+                                <td><a href={{ url('/admin/product') . '/' . $product->id }}>View</a></td>
+                                <td>
+                                    <button onclick='editPro({{ $product->id }})'><i
+                                            class="fa-solid fa-pen"></i></button>
+                                    <button onclick='delPro({{ $product->id }})'><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
@@ -49,5 +52,16 @@
     </div>
     @include('admin.include.footer')
 </body>
+<script>
+    function editPro(Id) {
+        // edit product
+        console.log(Id);
+    }
+
+    function delPro(Id) {
+        // delete product
+        console.log(Id);
+    }
+</script>
 
 </html>
