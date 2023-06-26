@@ -44,5 +44,6 @@ Route::prefix("admin")->group(function () {
         Route::post('/product', [AdminController::class, 'AddProduct']);
         Route::post('/user', [AdminController::class, 'user']);
         Route::post('/password', [AdminController::class, 'password']);
+        Route::post('/deletePro', [AdminController::class, 'deletePro']);
     });
 });

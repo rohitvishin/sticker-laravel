@@ -117,4 +117,21 @@ class AdminController extends Controller
                 'type' => 'fail'
             ]);
     }
+    public function deletePro(Request $request)
+    {
+        $data = $request->validate([
+            'pro_id' => 'required'
+        ]);
+        if (Product::where('id', $data['pro_id'])->update(['status' => 0])) {
+            ProductImage::where('product_id', $data['pro_id'])->update(['status' => 0]);
+            return response()->json([
+                'message' => 'Product Removed',
+                'type' => 'success'
+            ]);
+        }
+        return response()->json([
+            'message' => 'Operation failed',
+            'type' => 'fail'
+        ]);
+    }
 }
