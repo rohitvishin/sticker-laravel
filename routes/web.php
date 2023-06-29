@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 
@@ -15,3 +16,8 @@ use App\Http\Controllers\FrontendController;
 */
 
 Route::get('/', [FrontendController::class,'index']);
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/login',[Controller::class,'login']);

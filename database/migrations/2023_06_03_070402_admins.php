@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('icon');
-            $table->unsignedBigInteger('parent_id')->nullable()->comment('0:parent,1:child');
-            $table->integer('status')->comment('1:active,0:inactive')->default(1);
+            $table->string('password');
+            $table->string('email')->unique();
+            $table->string('mobile')->unique();
+            $table->integer('status')->comment('1:active,0:inactive')->default(1);;
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -28,6 +30,5 @@ return new class extends Migration
     public function down(): void
     {
         //
-        Schema::dropIfExists('categories');
     }
 };
