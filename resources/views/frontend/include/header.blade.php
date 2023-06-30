@@ -3,8 +3,10 @@
     <div class="flex items-center px-6 py-6 xl:px-24">
         <!-- Logo -->
         <a href="index.html" class="shrink-0">
-            <img src="img/logo.png" class="max-h-7 dark:hidden" alt="Xhibiter | NFT Marketplace" />
-            <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="Xhibiter | NFT Marketplace" />
+            <img src="{{ asset('img/main-logo.png') }}" class="max-h-2-75 dark:hidden"
+                alt="{{ $seo['logoAlt'] ?? 'Sticker Majesty Main logo' }}" />
+            <img src="{{ asset('img/main-logo.png') }}" class="hidden max-h-2-75 dark:block"
+                alt="{{ $seo['logoAlt'] ?? 'Sticker Majesty Main logo' }}" />
         </a>
 
         <!-- Search -->
@@ -31,8 +33,10 @@
                 class="t-0 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 dark:bg-jacarta-800 lg:hidden">
                 <!-- Mobile Logo -->
                 <a href="index.html" class="shrink-0">
-                    <img src="img/logo.png" class="max-h-7 dark:hidden" alt="Xhibiter | NFT Marketplace" />
-                    <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="Xhibiter | NFT Marketplace" />
+                    <img src="{{ asset('img/main-logo.png') }}" class="max-h-7 dark:hidden"
+                        alt="{{ $seo['logoAlt'] ?? 'Sticker Majesty Main logo' }}" />
+                    <img src="{{ asset('img/main-logo.png') }}" class="hidden max-h-7 dark:block"
+                        alt="{{ $seo['logoAlt'] ?? 'Sticker Majesty Main logo' }}" />
                 </a>
 
                 <!-- Mobile Menu Close -->
@@ -499,6 +503,7 @@
                             </li>
                         </ul>
                     </li>
+
                     <li class="js-nav-dropdown group relative">
                         <a href="#"
                             class="dropdown-toggle flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5"
@@ -555,6 +560,7 @@
                             </li>
                         </ul>
                     </li>
+
                     <li class="group">
                         <a href="create.html"
                             class="flex items-center justify-between py-3.5 font-display text-base text-jacarta-700 hover:text-accent focus:text-accent dark:text-white dark:hover:text-accent dark:focus:text-accent lg:px-5">Create</a>
@@ -651,16 +657,8 @@
                     <div class="dropdown-menu group-dropdown-hover:visible lg:invisible !-right-4 !top-[85%] !left-auto z-10 hidden min-w-[14rem] whitespace-nowrap rounded-xl bg-white transition-all will-change-transform before:absolute before:-top-3 before:h-3 before:w-full group-dropdown-hover:opacity-100 dark:bg-jacarta-800 lg:absolute lg:grid lg:!translate-y-4 lg:py-4 lg:px-2 lg:opacity-0 lg:shadow-2xl"
                         aria-labelledby="profileDropdown">
                         <button
-                            class="js-copy-clipboard my-4 flex select-none items-center whitespace-nowrap px-5 font-display leading-none text-jacarta-700 dark:text-white"
-                            data-tippy-content="Copy">
-                            <span
-                                class="max-w-[10rem] overflow-hidden text-ellipsis">0x7a86c0b064171007716bbd6af96676935799a63e</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                                class="ml-1 mb-px h-4 w-4 fill-jacarta-500 dark:fill-jacarta-300">
-                                <path fill="none" d="M0 0h24v24H0z" />
-                                <path
-                                    d="M7 7V3a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-4v3.993c0 .556-.449 1.007-1.007 1.007H3.007A1.006 1.006 0 0 1 2 20.993l.003-12.986C2.003 7.451 2.452 7 3.01 7H7zm2 0h6.993C16.549 7 17 7.449 17 8.007V15h3V4H9v3zM4.003 9L4 20h11V9H4.003z" />
-                            </svg>
+                            class="js-copy-clipboard my-4 flex select-none items-center whitespace-nowrap px-5 font-display leading-none text-jacarta-700 dark:text-white">
+                            <span class="max-w-[10rem] overflow-hidden text-ellipsis">Shree Vyas</span>
                         </button>
 
                         <div class="mx-5 mb-6 rounded-lg border border-jacarta-100 p-4 dark:border-jacarta-600">
@@ -702,50 +700,6 @@
                             <span class="mt-1 font-display text-sm text-jacarta-700 dark:text-white">Edit
                                 Profile</span>
                         </a>
-                        <div class="dropdown">
-                            <button
-                                class="dropdown-toggle flex w-full items-center justify-between space-x-2 rounded-xl px-5 py-2 transition-colors hover:bg-jacarta-50 hover:text-accent focus:text-accent dark:hover:bg-jacarta-600"
-                                data-bs-toggle="dropdown" id="languageSelect" aria-expanded="false">
-                                <div class="flex items-center space-x-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                                        class="h-4 w-4 fill-jacarta-700 transition-colors dark:fill-white">
-                                        <path fill="none" d="M0 0h24v24H0z" />
-                                        <path
-                                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-2.29-2.333A17.9 17.9 0 0 1 8.027 13H4.062a8.008 8.008 0 0 0 5.648 6.667zM10.03 13c.151 2.439.848 4.73 1.97 6.752A15.905 15.905 0 0 0 13.97 13h-3.94zm9.908 0h-3.965a17.9 17.9 0 0 1-1.683 6.667A8.008 8.008 0 0 0 19.938 13zM4.062 11h3.965A17.9 17.9 0 0 1 9.71 4.333 8.008 8.008 0 0 0 4.062 11zm5.969 0h3.938A15.905 15.905 0 0 0 12 4.248 15.905 15.905 0 0 0 10.03 11zm4.259-6.667A17.9 17.9 0 0 1 15.973 11h3.965a8.008 8.008 0 0 0-5.648-6.667z" />
-                                    </svg>
-                                    <span
-                                        class="mt-1 font-display text-sm text-jacarta-700 dark:text-white">Language</span>
-                                </div>
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                                    class="h-4 w-4 fill-jacarta-500 dark:fill-white">
-                                    <path fill="none" d="M0 0h24v24H0z"></path>
-                                    <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z">
-                                    </path>
-                                </svg>
-                            </button>
-                            <div class="dropdown-menu z-10 hidden w-full min-w-[200px] whitespace-nowrap rounded-xl bg-white py-4 px-2 text-left shadow-xl dark:bg-jacarta-900"
-                                aria-labelledby="languageSelect">
-                                <a href="#"
-                                    class="dropdown-item flex items-center justify-between rounded-xl px-5 py-2 font-display text-sm font-semibold text-jacarta-700 transition-colors hover:bg-jacarta-50 dark:text-white dark:hover:bg-jacarta-600">
-                                    <span>English</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                                        class="mb-[3px] h-4 w-4 fill-accent">
-                                        <path fill="none" d="M0 0h24v24H0z"></path>
-                                        <path d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z">
-                                        </path>
-                                    </svg>
-                                </a>
-                                <a href="#"
-                                    class="dropdown-item flex items-center justify-between rounded-xl px-5 py-2 font-display text-sm font-semibold transition-colors hover:bg-jacarta-50 dark:text-white dark:hover:bg-jacarta-600">
-                                    <span>Español</span>
-                                </a>
-                                <a href="#"
-                                    class="dropdown-item flex items-center justify-between rounded-xl px-5 py-2 font-display text-sm font-semibold transition-colors hover:bg-jacarta-50 dark:text-white dark:hover:bg-jacarta-600">
-                                    <span>Deutsch</span>
-                                </a>
-                            </div>
-                        </div>
                         <a href="#"
                             class="flex items-center space-x-2 rounded-xl px-5 py-2 transition-colors hover:bg-jacarta-50 hover:text-accent focus:text-accent dark:hover:bg-jacarta-600">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
@@ -761,7 +715,7 @@
                 </div>
 
                 <!-- Dark Mode -->
-                <a href="#"
+                <!-- <a href="#"
                     class="js-dark-mode-trigger group ml-2 flex h-10 w-10 items-center justify-center rounded-full border border-jacarta-100 bg-white transition-colors hover:border-transparent hover:bg-accent focus:border-transparent focus:bg-accent dark:border-transparent dark:bg-white/[.15] dark:hover:bg-accent">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                         class="dark-mode-light h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:hidden">
@@ -775,7 +729,7 @@
                         <path
                             d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
                     </svg>
-                </a>
+                </a> -->
             </div>
         </div>
 

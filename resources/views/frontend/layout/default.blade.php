@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-scheme="light">
+<html lang="en" dir="ltr">
 
 <head>
     @include('frontend.include.head')

@@ -9,10 +9,10 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
 <!-- Dark Mode JS -->
-<script src="js/darkMode.bundle.js"></script>
+<script src="{{ asset('js/darkMode.bundle.js') }}"></script>
 
 <!-- Favicons -->
-<link rel="shortcut icon" href="img/favicon.ico" />
-<link rel="apple-touch-icon" href="img/apple-touch-icon.html" />
-<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+<link rel="shortcut icon" href="{{ asset('img/icons/favicon.png') }}" />
+<link rel="apple-touch-icon" href="{{ asset('img/icons/favicon.png') }}" />
+<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/icons/favicon.png') }}" />
+<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('img/icons/favicon.png') }}" />

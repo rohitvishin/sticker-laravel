@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    //
     public function index(){
-
-        
         $data['seo'] = $this->getSeoData('Home');
         $data['website_settings'] = [
             'page' => 'Home Page',
@@ -21,6 +18,7 @@ class FrontendController extends Controller
 
     public function getSeoData($page){
         return [
+            'logoAlt' => 'Sticker Majesty | Best quality in Budget Price',
             'title' => 'Sticker Majesty Home Page',
             'keywords' => 'Sticker Majesty Home Page',
             'description' => 'Sticker Majesty Home Page',

@@ -5,11 +5,13 @@
             <div class="col-span-full sm:col-span-3 md:col-span-4">
                 <!-- Logo -->
                 <a href="index.html" class="mb-6 inline-block">
-                    <img src="img/logo.png" class="max-h-7 dark:hidden" alt="Xhibiter | NFT Marketplace" />
-                    <img src="img/logo_white.png" class="hidden max-h-7 dark:block" alt="Xhibiter | NFT Marketplace" />
+                    <img src="{{ asset('img/main-logo.png') }}" class="max-h-2-75 dark:hidden"
+                        alt="{{ $seo['logoAlt'] ?? 'Sticker Majesty Main logo' }}" />
+                    <img src="{{ asset('img/main-logo.png') }}" class="hidden max-h-2-75 dark:block"
+                        alt="{{ $seo['logoAlt'] ?? 'Sticker Majesty Main logo' }}" />
                 </a>
                 <p class="mb-12 dark:text-jacarta-300">
-                    Create, sell and collect truly rare digital artworks. Powered by blockchain technology.
+                    Premium and Unique Stickers Selling Company in India.
                 </p>
                 <!-- Socials -->
                 <div class="flex space-x-5">
@@ -142,5 +144,107 @@
     </div>
 </footer>
 
+<header class="header_sticky">
+    <nav class="bottom-nav">
+        <div class="bottom-nav-item active">
+            <div class="bottom-nav-link">
+                <i class="material-icons">home</i>
+                <span>Home</span>
+            </div>
+        </div>
+        <div class="bottom-nav-item">
+            <div class="bottom-nav-link">
+                <i class="material-icons">favorite</i>
+                <span>Wishlist</span>
+            </div>
+        </div>
+        <div class="bottom-nav-item">
+            <div class="bottom-nav-link">
+                <i class="fas fa-bars"></i>
+
+                <span>Cart</span>
+            </div>
+        </div>
+        <div class="bottom-nav-item">
+            <div class="bottom-nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                    class="h-4 w-4 fill-jacarta-700 transition-colors group-hover:fill-white group-focus:fill-white dark:fill-white">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                        d="M11 14.062V20h2v-5.938c3.946.492 7 3.858 7 7.938H4a8.001 8.001 0 0 1 7-7.938zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z">
+                    </path>
+                </svg>
+                <span>Account</span>
+            </div>
+        </div>
+
+        <div class="bottom-nav-item">
+            <div class="bottom-nav-link">
+                <i class="material-icons">settings</i>
+                <span>Setting</span>
+            </div>
+        </div>
+    </nav>
+</header>
+<style>
+@media (min-width:750px) {
+    .header_sticky {
+        display: none;
+    }
+}
+
+.bottom-nav-link svg {
+    fill: #fff;
+}
+
+.header_sticky .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.8rem 0;
+    background-color: #F9F54B;
+    z-index: 99;
+    will-change: transform;
+    transform: translateZ(0);
+    box-shadow: 0 -2px 3px -2px #212121;
+}
+
+.header_sticky .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.header_sticky .bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_sticky .bottom-nav .active {
+    color: #000;
+}
+</style>
+<script>
+var navItems = document.querySelectorAll(".bottom-nav-item");
+
+navItems.forEach(function(e, i) {
+    e.addEventListener("click", function(e) {
+        navItems.forEach(function(e2, i2) {
+            e2.classList.remove("active");
+        });
+        this.classList.add("active");
+    });
+});
+</script>
+
 <!-- JS Scripts -->
 <script src="{{ asset('js/app.bundle.js') }}"></script>
+<script src="{{ asset('js/countdown.bundle.js') }}"></script>
+<script src="{{ asset('js/pagescript.js') }}"></script>
