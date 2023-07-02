@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-
-Route::get('/login',[Controller::class,'login']);
+Route::get('/collections', [User::class, 'product_list']);
+Route::get('/product_detail', [User::class, 'product_detail']);
+// Route::get('/product_detail/{id}', [User::class, 'product_detail']);
