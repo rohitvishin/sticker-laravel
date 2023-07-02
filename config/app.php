@@ -58,6 +58,7 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL','http://localhost/sticker-laravel/public/assets'),
+    // 'asset_url' => env('ASSET_URL','http://localhost/laravel/public/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -185,4 +186,8 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+<<<<<<< HEAD
 ];
+=======
+];
+>>>>>>> b469a8581ae98cbfa3588dd364c32029ce655cbf

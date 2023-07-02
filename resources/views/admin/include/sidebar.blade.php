@@ -4,5 +4,7 @@
     <a href="{{ url('/admin/user') }}">Users</a>
     <a href="{{ url('/admin/category') }}">Category</a>
     <a href="{{ url('/admin/product') }}">Products</a>
+    <a href="{{ url('/admin/manage-product') }}">Manage Products</a>
     <a href="{{ url('/admin/password') }}">Password</a>
+    <a href="{{ url('/admin/logout') }}">Logout</a>
 </div>
