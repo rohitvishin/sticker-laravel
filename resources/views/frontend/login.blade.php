@@ -15,7 +15,7 @@
                 <div class="mb-12 lg:mb-0 lg:w-2/3 lg:pr-12">
                     <h2 class="mb-4 font-display text-xl text-jacarta-700 dark:text-white">Login Now!!!</h2>
                     <p class="mb-16 text-lg leading-normal dark:text-jacarta-300">
-                        Have a question? Need help? Don't hesitate, drop us a line
+                        Login into your Kingdom!
                     </p>
                     <form id="contact-form" method="post">
                         <div class="flex space-x-7">
@@ -25,7 +25,7 @@
                                         class="text-red">*</span></label>
                                 <input name="name"
                                     class="contact-form-input w-full rounded-lg border-jacarta-800 py-3 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-800 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"
-                                    id="name" type="text" required />
+                                    id="email" type="text" required />
                             </div>
 
                             <div class="mb-6 w-1/2">
@@ -34,7 +34,7 @@
                                         class="text-red">*</span></label>
                                 <input name="email"
                                     class="contact-form-input w-full rounded-lg border-jacarta-100 py-3 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-800 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"
-                                    id="email" type="email" required />
+                                    id="password" type="password" required />
                             </div>
                         </div>
 
@@ -80,8 +80,9 @@
                             </span>
 
                             <div>
-                                <span class="block font-display text-base text-jacarta-700 dark:text-white">Gmail
-                                    Login</span>
+                                <a href="auth/google"
+                                    class="block font-display text-base text-jacarta-700 dark:text-white">Gmail
+                                    Login</a>
                                 <!-- <a href="tel:123-123-456" class="text-sm hover:text-accent dark:text-jacarta-300"></a> -->
                             </div>
                         </div>

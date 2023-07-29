@@ -16,17 +16,20 @@ use App\Http\Controllers\FrontendController;
 */
 
 // Basic Website Routes
-Route::get('/', [FrontendController::class,'index']);
+Route::get('/', [FrontendController::class,'index'])->name('home');
+Route::get('/auth/google', [FrontendController::class,'redirectToGoogle']);
+Route::get('/auth/google/callback', [FrontendController::class,'handleGoogleCallback']);
 Route::get('/login', [FrontendController::class,'login']);
 Route::get('/register', [FrontendController::class,'register']);
-Route::get('/shop', [FrontendController::class,'shop']);
+Route::get('/shop/{category?}/{subCategory?}', [FrontendController::class,'shop']);
 Route::get('/categories', [FrontendController::class,'categories']);
 Route::get('/product-details/{product_id}', [FrontendController::class,'index']);
-Route::get('/category-products/{category_id}', [FrontendController::class,'index']);
 Route::get('/bulk-order', [FrontendController::class,'index']);
 Route::get('/blog', [FrontendController::class,'index']);
 Route::get('/blog-detail/{blog_id}', [FrontendController::class,'index']);
 Route::get('/faq', [FrontendController::class,'index']);
+Route::get('/support', [FrontendController::class,'index']);
+Route::get('/track-order/{orderId}', [FrontendController::class,'index']);
 
 // User Routes
 Route::get('/my-profile', [FrontendController::class,'profile']);

@@ -18,4 +18,9 @@ class Product extends Model
         'seo',
         'status',
     ];
+
+    public function productImage()
+    {
+        return $this->belongsTo(ProductImage::class);
+    }
 }
