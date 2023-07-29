@@ -115,8 +115,9 @@ class FrontendController extends Controller
         return view('frontend.categories', $data);
     }
 
-    public function profile()
+    public function profile(Request $request)
     {
+        dd(Auth::user()->id);
         $data['seo'] = $this->getSeoData('Home');
         $data['website_settings'] = [
             'page' => 'Home Page',

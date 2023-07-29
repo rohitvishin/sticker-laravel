@@ -3,6 +3,8 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ use App\Http\Controllers\FrontendController;
 
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/home', [FrontendController::class, 'index'])->name('home');
-Route::get('/login', [FrontendController::class, 'login'])->name('login');
+Route::get('/login', [FrontendController::class, 'login'])->name('user.login');
 Route::post('/login', [FrontendController::class, 'validateLogin'])->name('validateLogin');
 Route::get('/register', [FrontendController::class, 'register'])->name('register');
 Route::post('/register', [FrontendController::class, 'submitRegister'])->name('submitRegister');
