@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('status')->comment('1:active,0:inactive')->default(1);;
             $table->rememberToken();
             $table->timestamps();
+            $table->timestamp('email_verified_at')->nullable();
         });
     }
 

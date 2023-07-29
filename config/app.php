@@ -57,8 +57,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL','http://localhost/sticker-laravel/public/assets'),
-    // 'asset_url' => env('ASSET_URL','http://localhost/laravel/public/assets'),
+    // 'asset_url' => env('ASSET_URL','http://localhost/sticker-laravel/public/assets'),
+    'asset_url' => env('ASSET_URL','http://localhost/sticker/public/assets'),
 
     /*
     |--------------------------------------------------------------------------

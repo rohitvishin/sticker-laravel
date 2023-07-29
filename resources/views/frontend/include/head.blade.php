@@ -7,7 +7,7 @@
 
 <!-- Css -->
 <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Dark Mode JS -->
 <script src="{{ asset('js/darkMode.bundle.js') }}"></script>
 
