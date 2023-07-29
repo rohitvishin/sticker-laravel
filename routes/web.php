@@ -16,6 +16,7 @@ use App\Http\Controllers\FrontendController;
 */
 
 // Basic Website Routes
+
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/home', [FrontendController::class, 'index'])->name('home');
 Route::get('/login', [FrontendController::class, 'login'])->name('login');
@@ -23,15 +24,17 @@ Route::post('/login', [FrontendController::class, 'validateLogin'])->name('valid
 Route::get('/register', [FrontendController::class, 'register'])->name('register');
 Route::post('/register', [FrontendController::class, 'submitRegister'])->name('submitRegister');
 
-// browse products
-Route::get('/shop', [FrontendController::class, 'shop']);
+Route::get('/auth/google', [FrontendController::class, 'redirectToGoogle']);
+Route::get('/auth/google/callback', [FrontendController::class, 'handleGoogleCallback']);
+Route::get('/shop/{category?}/{subCategory?}', [FrontendController::class, 'shop']);
 Route::get('/categories', [FrontendController::class, 'categories']);
 Route::get('/product-details/{product_id}', [FrontendController::class, 'index']);
-Route::get('/category-products/{category_id}', [FrontendController::class, 'index']);
 Route::get('/bulk-order', [FrontendController::class, 'index']);
 Route::get('/blog', [FrontendController::class, 'index']);
 Route::get('/blog-detail/{blog_id}', [FrontendController::class, 'index']);
 Route::get('/faq', [FrontendController::class, 'index']);
+Route::get('/support', [FrontendController::class, 'index']);
+Route::get('/track-order/{orderId}', [FrontendController::class, 'index']);
 
 // User Routes
 Route::group(['middleware' => 'auth'], function () {
