@@ -20,7 +20,8 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('/home', [FrontendController::class, 'index'])->name('home');
 Route::get('/login', [FrontendController::class, 'login'])->name('login');
 Route::post('/login', [FrontendController::class, 'validateLogin'])->name('validateLogin');
-Route::get('/register', [FrontendController::class, 'register']);
+Route::get('/register', [FrontendController::class, 'register'])->name('register');
+Route::post('/register', [FrontendController::class, 'submitRegister'])->name('submitRegister');
 
 // browse products
 Route::get('/shop', [FrontendController::class, 'shop']);
@@ -54,5 +55,3 @@ Route::get('/contact-us', [FrontendController::class, 'index']);
 Route::group(['prefix' => 'accounts'], function () {
     Route::get('/contact-us', [FrontendController::class, 'index']);
 });
-
-

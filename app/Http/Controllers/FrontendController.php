@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,7 +46,6 @@ class FrontendController extends Controller
             'message' => 'fail',
             'status' => 0,
         ]);
-        // return redirect()->route('login')->withErrors(['email' => 'Invalid credentials']);
     }
 
     public function register()
@@ -58,7 +58,27 @@ class FrontendController extends Controller
 
         return view('frontend.register', $data);
     }
-
+    public function submitRegister(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'mobile' => 'required|unique:users,mobile',
+            'password' => 'required',
+            'c_password' => 'required|same:password',
+        ]);
+        $register = new User($data);
+        if ($register->save()) {
+            return response([
+                'message' => 'success',
+                'status' => 1,
+            ]);
+        }
+        return response([
+            'message' => 'fail',
+            'status' => 0,
+        ]);
+    }
     public function shop()
     {
         $data['seo'] = $this->getSeoData('Home');
