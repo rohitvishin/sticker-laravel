@@ -17,8 +17,12 @@ use App\Http\Controllers\FrontendController;
 
 // Basic Website Routes
 Route::get('/', [FrontendController::class, 'index']);
-Route::get('/login', [FrontendController::class, 'login']);
+Route::get('/home', [FrontendController::class, 'index'])->name('home');
+Route::get('/login', [FrontendController::class, 'login'])->name('login');
+Route::post('/login', [FrontendController::class, 'validateLogin'])->name('validateLogin');
 Route::get('/register', [FrontendController::class, 'register']);
+
+// browse products
 Route::get('/shop', [FrontendController::class, 'shop']);
 Route::get('/categories', [FrontendController::class, 'categories']);
 Route::get('/product-details/{product_id}', [FrontendController::class, 'index']);
