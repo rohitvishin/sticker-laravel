@@ -131,8 +131,7 @@
                 <script>
                 document.write(new Date().getFullYear())
                 </script>
-                Xhibiter — Made by
-                <a href="https://deothemes.com/" class="hover:text-accent">DeoThemes</a>
+                Sticker Majesty
             </span>
             <ul class="flex flex-wrap space-x-4 text-sm dark:text-jacarta-400">
                 <li>
