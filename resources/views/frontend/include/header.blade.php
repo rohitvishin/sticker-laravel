@@ -132,7 +132,7 @@
                             $isCreatedLessThanMonth = $created_date->diff(now())->days;
                             @endphp
                             <li>
-                                <a href="{{ 'shop/'.$subCategory['slug'] }}"
+                                <a href="{{ 'shop/'.(isset($subCategory['slug']) && !empty($subCategory['slug']) ? $subCategory['slug'] : strtolower(str_replace(' ','-',$subCategory['name']))) }}"
                                     class="flex items-center rounded-xl px-5 py-2 transition-colors hover:bg-jacarta-50 hover:text-accent focus:text-accent dark:hover:bg-jacarta-600">
                                     <span class="mr-3 rounded-xl bg-light-base p-[0.375rem]">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
