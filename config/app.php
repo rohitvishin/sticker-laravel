@@ -57,7 +57,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL','http://localhost/laravel/public/assets'),
+    'asset_url' => env('ASSET_URL','http://localhost/sticker-laravel/public/assets'),
+    // 'asset_url' => env('ASSET_URL','http://localhost/laravel/public/assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +169,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -183,6 +185,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ])->toArray(),
 
 ];
