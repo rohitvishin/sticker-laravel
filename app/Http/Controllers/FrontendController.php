@@ -47,10 +47,8 @@ class FrontendController extends Controller
             'logo' => '',
         ];
 
-
         $limit = 10;
-        $offset = 0;
-        if($categiory != NULL && $subCategory != NULL){
+        if($category != NULL && $subCategory != NULL){
             $data['products'] = Product::where('status', 1)->orderBy('id','desc')->with('productImage')->paginate($limit);
         }else{
             $data['products'] = Product::where('status', 1)->orderBy('id','desc')->with('productImage')->paginate($limit);
