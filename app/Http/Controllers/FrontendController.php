@@ -83,7 +83,7 @@ class FrontendController extends Controller
             'status' => 0,
         ]);
     }
-    public function shop($category = NULL, $subCategory = NULL)
+    public function shop($subCategory = NULL)
     {
         $data['seo'] = $this->getSeoData('Home');
         $data['website_settings'] = [
@@ -92,10 +92,15 @@ class FrontendController extends Controller
         ];
         $limit = 10;
         $offset = 0;
-        if ($category != NULL && $subCategory != NULL) {
-            $data['products'] = Product::where('status', 1)->orderBy('id', 'desc')->with('productImage')->paginate($limit);
+
+        if($subCategory != NULL){
+            $categoryIds = Category::select('id')->where('slug', $subCategory)->first();
+        }
+        
+        if ($subCategory != NULL) {
+            $data['products'] = Product::where(['category_id' => $categoryIds['id'], 'status' => 1])->orderBy('id', 'desc')->with(['ProductImage','category'])->paginate($limit);
         } else {
-            $data['products'] = Product::where('status', 1)->orderBy('id', 'desc')->with('productImage')->paginate($limit);
+            $data['products'] = Product::where('status', 1)->orderBy('id', 'desc')->with('ProductImage')->paginate($limit);
         }
 
 

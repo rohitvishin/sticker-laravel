@@ -26,7 +26,7 @@ Route::post('/register', [FrontendController::class, 'submitRegister'])->name('s
 
 Route::get('/auth/google', [FrontendController::class, 'redirectToGoogle']);
 Route::get('/auth/google/callback', [FrontendController::class, 'handleGoogleCallback']);
-Route::get('/shop/{category?}/{subCategory?}', [FrontendController::class, 'shop']);
+Route::get('/shop/{subCategory?}', [FrontendController::class, 'shop']);
 Route::get('/categories', [FrontendController::class, 'categories']);
 Route::get('/product-details/{product_id}', [FrontendController::class, 'index']);
 Route::get('/bulk-order', [FrontendController::class, 'index']);
