@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,8 @@ Route::post('/login', [FrontendController::class, 'validateLogin'])->name('valid
 Route::get('/register', [FrontendController::class, 'register'])->name('register');
 Route::post('/register', [FrontendController::class, 'submitRegister'])->name('submitRegister');
 
-Route::get('/auth/google', [FrontendController::class, 'redirectToGoogle']);
-Route::get('/auth/google/callback', [FrontendController::class, 'handleGoogleCallback']);
+Route::get('auth/google', [GoogleController::class, 'signInwithGoogle']);
+Route::get('callback/google', [GoogleController::class, 'callbackToGoogle']);
 Route::get('/shop/{subCategory?}', [FrontendController::class, 'shop']);
 Route::get('/categories', [FrontendController::class, 'categories']);
 Route::get('/product-details/{product_id}', [FrontendController::class, 'index']);

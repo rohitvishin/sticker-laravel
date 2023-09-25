@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google' => [
+        'client_id' => '489178185012-6m8h9r62mb6ef7dnn2lruflk4akuaqbe.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://localhost/sticker-laravel/callback/google',
+      ],
+
 ];

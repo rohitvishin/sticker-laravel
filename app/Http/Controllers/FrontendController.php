@@ -33,6 +33,7 @@ class FrontendController extends Controller
 
         return view('frontend.login', $data);
     }
+
     public function validateLogin(Request $request)
     {
         $credentials = $request->validate([
@@ -62,6 +63,7 @@ class FrontendController extends Controller
 
         return view('frontend.register', $data);
     }
+    
     public function submitRegister(Request $request)
     {
         $data = $request->validate([
@@ -83,6 +85,7 @@ class FrontendController extends Controller
             'status' => 0,
         ]);
     }
+
     public function shop($subCategory = NULL)
     {
         $data['seo'] = $this->getSeoData('Home');
@@ -131,41 +134,6 @@ class FrontendController extends Controller
         return view('frontend.profile', $data);
     }
 
-    public function redirectToGoogle()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    public function handleGoogleCallback()
-    {
-        try {
-            $user = Socialite::driver('google')->user();
-            // Here, you can create a new user or authenticate the existing user based on the $user data.
-            // For example:
-            $existingUser = User::where('email', $user->email)->first();
-            if ($existingUser) {
-                Auth::login($existingUser);
-            } else {
-                $newUser = User::create([
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'google_id' => $user->id,
-                    // You may store other relevant data from the $user object.
-                ]);
-                Auth::login($newUser);
-            }
-            // After creating/authenticating the user, you can redirect to the desired page.
-            return redirect()->route('home');
-        } catch (\Exception $e) {
-            // Handle any errors that occur during the login process.
-            return redirect()->route('login')->with('error', 'Google login failed.');
-        }
-    }
-
-    // public function authUser(){
-
-    // }
-
     public function getSeoData($page)
     {
         return [
@@ -205,4 +173,6 @@ class FrontendController extends Controller
 
         return $data;
     }
+
+    
 }
